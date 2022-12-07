@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS=-g
+CC=gcc-12
+CFLAGS=-g -Wall
 TARGET:testapp.exe libmm.a
 OUTFILES=testapp.exe libmm.a
 EXTERNAL_LIBS=
@@ -19,3 +19,6 @@ clean:
 	rm -f testapp.o
 	rm -f ${OUTFILES}
 	rm -f ${OBJS}
+format:
+	clang-format -i **/*.c
+	clang-format -i **/*.h
